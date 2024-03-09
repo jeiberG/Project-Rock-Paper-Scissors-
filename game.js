@@ -20,15 +20,29 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function playGame() {
+function playGame(selet) {
     let playerScore = 0;
     let computerScore = 0;
 
-    const playerSelection = prompt("Elige: Piedra, Papel o Tijeras").toLowerCase();
+    const playerSelection = selet.toLowerCase();
     const computerSelection = getComputerChoice();
     const roundResult = playRound(playerSelection, computerSelection);
 
-    console.log(roundResult);
+    console.log(roundResult);    
 }
 
-playGame();
+const rock = document.getElementById("rock");
+rock.addEventListener("click", function() {
+    playGame("piedra");
+});
+
+const paper = document.getElementById("paper");
+paper.addEventListener("click", function() {
+    playGame("papel");
+});
+
+const scissors = document.getElementById("scissors");
+scissors.addEventListener("click", function() {
+    playGame("tijeras");
+});
+
