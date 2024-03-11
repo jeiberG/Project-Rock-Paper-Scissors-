@@ -72,13 +72,27 @@ header button:hover {
     display: flex;
     justify-content: center;
     gap: 150px;
-    padding: 150px 0;
+    padding: 100px 0;
 }
 
 .vs h2 {
     color: var(--clr3);
     font-family: var(--fontPermanent);
     font-size: 3rem;
+}
+.reset{
+    display: none;
+}
+.resetActive {
+    display:unset;
+    margin-top: 30px;
+    background-color: #a2ff5b;
+    padding: 10px;
+    border-radius: 100vmax;
+    color: #000;
+    font-family: var(--fontAbril);
+    font-size: 1rem;
+    font-weight: 600;
 }
 .eleciones { 
     display: flex;
