@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+:root{
+	--clr1:#444444;
+	--clr2:#FFFF;
+	--clr3:#fac710;
+	--clr4:#00abff;
+	--clr5:#efd780;
+	--fontAbril:'Abril Fatface', serif;
+	--fontPermanent:'Permanent Marker', cursive;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -7,4 +20,84 @@
 body { 
     background-color: #333;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+header { 
+    display: flex;
+    align-items: center;
+    background-color: #111;
+    color: var(--clr2);
+    font-family:var(--fontPermanent);
+    padding: 20px;
+}
+
+header h1 {
+    margin: auto;
+    text-align: center;
+}
+
+header button {
+    font-size: 2rem;
+    width: fit-cotent;
+}
+
+header button:hover { 
+    background-color: var(--clr3);
+}
+
+.interfas {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    padding: 150px 0;
+}
+
+.vs h2 {
+    color: var(--clr3);
+    font-family: var(--fontPermanent);
+    font-size: 3rem;
+}
+.eleciones { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eleciones .eleccion {
+    background-color: white;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#results {
+    font-family: var(--fontAbril);
+    font-size: 2.5rem;
+    color:#9e9e9e;
+}
+.name {
+    font-family: var(--fontAbril);
+    font-size: 2rem;
+    color: var(--clr4);
+}
+
+.name span {
+    color: var(--clr2);
+}
+
+.armas button { 
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+    background-color: var(--clr2);
+    margin: 5%;
+}
+.armas button:hover {
+    background-color: var(--clr3);
 }
