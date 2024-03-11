@@ -24,11 +24,24 @@ function playGame(selet) {
     let playerScore = 0;
     let computerScore = 0;
 
+    const ptstu = document.querySelector(".span-tu");
+    const ptsCPU = document.querySelector(".span-CPU");
     const playerSelection = selet.toLowerCase();
     const computerSelection = getComputerChoice();
     const roundResult = playRound(playerSelection, computerSelection);
+    const divResults = document.getElementById("results")
+    divResults.innerText = roundResult ;
 
-    console.log(roundResult);    
+    if (roundResult.includes("Ganaste")) {
+        playerScore++;
+        
+    } else if (roundResult.includes("Perdiste")) {
+        computerScore++;
+        
+    }
+
+    ptstu.innerText = playerScore + parseInt(ptstu.innerText);
+    ptsCPU.innerText = computerScore + parseInt(ptsCPU.innerText);
 }
 
 const rock = document.getElementById("rock");
