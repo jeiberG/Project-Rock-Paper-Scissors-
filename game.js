@@ -1,3 +1,5 @@
+'use strict'
+
 function getComputerChoice() {
     const choices = ['piedra', 'papel', 'tijera'];
     const randomIndex = Math.floor(Math.random() * choices.length);
@@ -7,9 +9,9 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     // Verificar todas las condiciones posibles en las que el jugador gana
     const playerWins =
-        (playerSelection === "piedra" && computerSelection === "tijeras") ||
+        (playerSelection === "piedra" && computerSelection === "tijera") ||
         (playerSelection === "papel" && computerSelection === "piedra") ||
-        (playerSelection === "tijeras" && computerSelection === "papel");
+        (playerSelection === "tijera" && computerSelection === "papel");
 
     if (playerWins) {
         return "Ganaste";
@@ -20,55 +22,49 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function playGame(selet) {
+function playGame(playerSelection, cpuChoice) {
     let playerScore = 0;
     let computerScore = 0;
 
     const ptstu = document.querySelector(".span-tu");
     const ptsCPU = document.querySelector(".span-CPU");
-    const playerSelection = selet.toLowerCase();
-    const computerSelection = getComputerChoice();
-    const roundResult = playRound(playerSelection, computerSelection);
-    const divResults = document.getElementById("results")
-    divResults.innerText = roundResult ;
+    const roundResult = playRound(playerSelection, cpuChoice);
+    const divResults = document.getElementById("results");
+    divResults.innerText = roundResult;
 
     if (roundResult.includes("Ganaste")) {
         playerScore++;
-        
     } else if (roundResult.includes("Perdiste")) {
         computerScore++;
-        
     }
 
     ptstu.innerText = playerScore + parseInt(ptstu.innerText);
     ptsCPU.innerText = computerScore + parseInt(ptsCPU.innerText);
 }
 
+const eleccionUser = document.querySelector(".eleccionUser");
+const eleccionCPU = document.querySelector(".eleccionCPU");
+
 const rock = document.getElementById("rock");
 rock.addEventListener("click", function() {
-    playGame("piedra");
+    eleccionUser.innerText = "🗿";
+    const cpuChoice = getComputerChoice();
+    playGame("piedra", cpuChoice);
+    eleccionCPU.innerText = cpuChoice;
 });
 
 const paper = document.getElementById("paper");
 paper.addEventListener("click", function() {
-    playGame("papel");
+    eleccionUser.innerText = "📄";
+    const cpuChoice = getComputerChoice();
+    playGame("papel", cpuChoice);
+    eleccionCPU.innerText = cpuChoice;
 });
 
 const scissors = document.getElementById("scissors");
 scissors.addEventListener("click", function() {
-    playGame("tijeras");
+    eleccionUser.innerText = "✂️";
+    const cpuChoice = getComputerChoice();
+    playGame("tijera", cpuChoice);
+    eleccionCPU.innerText = cpuChoice;
 });
-
-const info = document.querySelector(".info");
-info.addEventListener('click', ()=>{
-    const img = document.querySelector(".img");
-    img.classList.remove("img");
-    img.classList.add("imgActive");
-})
-
-const cerrar = document.querySelector(".cerrar");
-cerrar.addEventListener('click', ()=>{
-    const img = document.querySelector(".imgActive");
-    img.classList.remove("imgActive");
-    img.classList.add("img");
-})
