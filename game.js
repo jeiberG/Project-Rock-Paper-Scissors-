@@ -59,3 +59,16 @@ scissors.addEventListener("click", function() {
     playGame("tijeras");
 });
 
+const info = document.querySelector(".info");
+info.addEventListener('click', ()=>{
+    const img = document.querySelector(".img");
+    img.classList.remove("img");
+    img.classList.add("imgActive");
+})
+
+const cerrar = document.querySelector(".cerrar");
+cerrar.addEventListener('click', ()=>{
+    const img = document.querySelector(".imgActive");
+    img.classList.remove("imgActive");
+    img.classList.add("img");
+})

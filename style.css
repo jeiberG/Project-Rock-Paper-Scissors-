@@ -47,6 +47,26 @@ header button {
 header button:hover { 
     background-color: var(--clr3);
 }
+.img{
+    display: none;
+}
+.imgActive{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+.imgActive div {
+    position: relative;
+}
+.imgActive div .cerrar{
+    position: absolute;
+    font-size: 3rem;
+}
+
+.imgActive div .cerrar:hover{
+    background-color: var(--clr3);
+}
 
 .interfas {
     display: flex;
