@@ -1,6 +1,6 @@
 # Juego de Piedra, Papel o Tijeras
 
-Este es un juego simple de Piedra, Papel o Tijeras implementado en JavaScript que se juega completamente desde la consola del navegador.
+Este es un juego simple de Piedra, Papel o Tijeras implementado en JavaScript que se juegaba anteriormente desde completamente desde la consola del navegador y ahora agrega una ineterzas para el usuario.
 
 ## Descripción del Proyecto
 
